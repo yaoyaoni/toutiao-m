@@ -11,7 +11,6 @@ const routes = [{
         import ('@/views/login')
 }, {
     path: '/',
-    name: 'layout',
     component: () =>
         import ('@/views/layout'),
     children: [{

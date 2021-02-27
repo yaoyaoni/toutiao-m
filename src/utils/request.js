@@ -4,7 +4,8 @@ import axios from "axios";
 import store from '@/store'
 
 const request = axios.create({
-    baseURL: "http://ttapi.research.itcast.cn/" // 接口的基本路径
+    // baseURL: "http://ttapi.research.itcast.cn/" // 接口的基本路径
+    baseURL: "http://toutiao-app.itheima.net" // 接口的基本路径
 });
 
 // 请求拦截器
@@ -19,6 +20,10 @@ request.interceptors.request.use(
         if (user && user.token) {
             config.headers.Authorization = `Bearer ${user.token}`;
         }
+        if (config.url.startsWith('/app')) {
+            config.url = config.url.slice(4)
+        }
+
         return config;
     },
     function(error) {
