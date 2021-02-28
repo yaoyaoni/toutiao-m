@@ -1,9 +1,6 @@
 <template>
   <div class="qa-container">
-    <!-- 子路由出口 -->
-    <router-view />
-
-   
+  
   </div>
 </template>
 

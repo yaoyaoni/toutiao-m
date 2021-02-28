@@ -4,6 +4,7 @@ import { setItem, getItem } from '../utils/storage'
 
 Vue.use(Vuex)
 
+// localStorage存储的key一般情况下是大写的名字
 const TOKEN_KEY = 'TOUTIAO_USER'
 
 export default new Vuex.Store({
