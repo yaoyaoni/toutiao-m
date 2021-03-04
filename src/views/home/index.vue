@@ -9,6 +9,7 @@
         size="small"
         round
         icon="search"
+        to="/search"
         >搜索</van-button
       >
     </van-nav-bar>
@@ -117,11 +118,11 @@ export default {
         let channels = []
         const localChannels = getItem('TOUTIAO_CHANNELS')
         if (this.user || !localChannels) {
-            // 登录 或者 未登录本地没有存储 获取后端数据
+            // 已登录  请求获取用户频道列表
             const { data } = await getUserChannels()
             channels = data.data.channels
         } else {
-            // 未登录并且本地有数据
+            // 未登录    判断是否有本地的频道列表数据
             channels = localChannels
         }
         this.channels = channels
