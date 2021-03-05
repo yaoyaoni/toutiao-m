@@ -44,6 +44,13 @@ const routes = [{
         name: 'search',
         component: () =>
             import ('@/views/search')
+    },
+    {
+        path: '/article:articleId',
+        name: 'article',
+        component: () =>
+            import ('@/views/article'),
+        props: true // 开启props传参  说白的就是把lu'you参数映射到组件的  props 数据中
     }
 ];
 
